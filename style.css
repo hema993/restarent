@@ -1,0 +1,40 @@
+*{box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;margin:0;color:#222}
+
+.hero{background:linear-gradient(135deg,#ff9a9e 0%,#fad0c4 100%);padding:72px 20px;text-align:center;color:#fff}
+.hero-inner{max-width:1000px;margin:0 auto}
+.hero h1{font-size:48px;margin:0 0 8px}
+.hero p{margin:0 0 20px;opacity:0.95}
+.btn{display:inline-block;background:#fff;color:#ff5a7a;padding:12px 20px;border-radius:30px;font-weight:600;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+
+.container{max-width:1100px;margin:30px auto;padding:0 20px}
+.menu-section h2{font-size:28px;margin-bottom:6px}
+.menu-section .lead{color:#666;margin:0 0 18px}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chip{background:#fff;border:0;padding:8px 14px;border-radius:999px;box-shadow:0 4px 10px rgba(0,0,0,0.06);cursor:pointer}
+.chip.active{background:linear-gradient(90deg,#ffecd2,#fcb69f);transform:translateY(-2px)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(31,38,135,0.06);transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(31,38,135,0.08)}
+.card img{width:100%;height:180px;object-fit:cover;display:block}
+.card-body{padding:14px}
+.card-body h3{margin:0 0 6px;font-size:18px}
+.muted{margin:0 0 10px;color:#666;font-size:14px}
+.tags{display:flex;gap:8px}
+.tag{padding:6px 8px;border-radius:999px;font-size:12px;font-weight:600}
+.tag.veg{background:#e6f9ec;color:#047857}
+.tag.nonveg{background:#ffe9e6;color:#9b2c1a}
+.tag.biryani{background:#fff4e6;color:#b35a00}
+.tag.tiffin{background:#eef2ff;color:#3b3bff}
+.tag.meal{background:#fff8e1;color:#8a6d00}
+
+.about{margin:36px 0;padding:24px;background:linear-gradient(180deg,#fff,#fffef7);border-radius:12px}
+.footer{padding:18px;text-align:center;color:#666;font-size:14px}
+
+@media (max-width:600px){
+  .hero h1{font-size:32px}
+  .card img{height:150px}
+}
+

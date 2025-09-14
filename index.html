@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="te">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZomoTaste — Restaurant Menu</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>ZomoTaste</h1>
+      <p>Fresh. Flavorful. Home-style meals — Veg & Non-Veg</p>
+      <a class="btn" href="#menu">Menu chudandi</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="menu" class="menu-section">
+      <h2>Our Specials</h2>
+      <p class="lead">Biryani, Tiffins, Meals and more — colourful gallery with names</p>
+
+      <div class="filters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="veg">Veg</button>
+        <button class="chip" data-filter="nonveg">Non-Veg</button>
+        <button class="chip" data-filter="biryani">Biryani</button>
+        <button class="chip" data-filter="tiffin">Tiffin</button>
+      </div>
+
+      <div class="grid" id="gallery">
+        <!-- Veg Biryani -->
+        <article class="card" data-type="veg biryani">
+          <img src="https://images.unsplash.com/photo-1604908177522-1a7b88b2b9fb?q=80&w=1200&auto=format&fit=crop" alt="Veg Biryani">
+          <div class="card-body">
+            <h3>Veg Biryani</h3>
+            <p class="muted">Fragrant basmati with mixed vegetables and spices.</p>
+            <div class="tags"><span class="tag veg">Veg</span><span class="tag biryani">Biryani</span></div>
+          </div>
+        </article>
+
+        <!-- Chicken Biryani -->
+        <article class="card" data-type="nonveg biryani">
+          <img src="https://images.unsplash.com/photo-1604908177523-2b9b88b3c9fb?q=80&w=1200&auto=format&fit=crop" alt="Chicken Biryani">
+          <div class="card-body">
+            <h3>Chicken Biryani</h3>
+            <p class="muted">Slow-cooked chicken layered with saffron rice.</p>
+            <div class="tags"><span class="tag nonveg">Non-Veg</span><span class="tag biryani">Biryani</span></div>
+          </div>
+        </article>
+
+        <!-- Paneer Tiffin -->
+        <article class="card" data-type="veg tiffin">
+          <img src="https://images.unsplash.com/photo-1589308078050-3c7b9b1b0d8b?q=80&w=1200&auto=format&fit=crop" alt="Paneer Tiffin">
+          <div class="card-body">
+            <h3>Paneer Tiffin</h3>
+            <p class="muted">Paneer curry, dal, rice & salad — perfect lunch box.</p>
+            <div class="tags"><span class="tag veg">Veg</span><span class="tag tiffin">Tiffin</span></div>
+          </div>
+        </article>
+
+        <!-- Mutton Meals -->
+        <article class="card" data-type="nonveg meal">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Mutton Meals">
+          <div class="card-body">
+            <h3>Mutton Meals</h3>
+            <p class="muted">Rich mutton curry, rice, papad and raita.</p>
+            <div class="tags"><span class="tag nonveg">Non-Veg</span><span class="tag meal">Meals</span></div>
+          </div>
+        </article>
+
+        <!-- Egg Biryani -->
+        <article class="card" data-type="nonveg biryani">
+          <img src="https://images.unsplash.com/photo-1604908177524-3c7b88b4d9fb?q=80&w=1200&auto=format&fit=crop" alt="Egg Biryani">
+          <div class="card-body">
+            <h3>Egg Biryani</h3>
+            <p class="muted">Classic egg biryani with boiled eggs and spice mix.</p>
+            <div class="tags"><span class="tag nonveg">Non-Veg</span><span class="tag biryani">Biryani</span></div>
+          </div>
+        </article>
+
+        <!-- Mixed Veg Meals -->
+        <article class="card" data-type="veg meal">
+          <img src="https://images.unsplash.com/photo-1604908177525-4d8c88b5e9fb?q=80&w=1200&auto=format&fit=crop" alt="Mixed Veg Meals">
+          <div class="card-body">
+            <h3>Mixed Veg Meals</h3>
+            <p class="muted">Seasonal vegetables, dal tadka, rice & chapati.</p>
+            <div class="tags"><span class="tag veg">Veg</span><span class="tag meal">Meals</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about">
+      <h2>About ZomoTaste</h2>
+      <p>Local flavours prepared fresh every day. Contact: <strong>+91 98765 43210</strong></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© ZomoTaste — Fresh Meals • Made with ❤️</p>
+  </footer>
+
+  <script>
+    // Simple filter functionality
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.card');
+
+    chips.forEach(c => c.addEventListener('click', () => {
+      chips.forEach(x => x.classList.remove('active'));
+      c.classList.add('active');
+      const f = c.dataset.filter;
+      cards.forEach(card => {
+        const types = card.dataset.type.split(' ');
+        if (f === 'all' || types.includes(f)) card.style.display = '';
+        else card.style.display = 'none';
+      });
+    }));
+  </script>
+</body>
+</html>
+
